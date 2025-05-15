@@ -41,6 +41,17 @@ const PORT = process.env.PORT || 3000;
  * a la base de datos se establece correctamente.
 */
 
+/*ntenta conectarse a MongoDB usando una función llamada connectDB().
+Si la conexión sale bien, ejecuta el .then() → arranca el servidor Express (app.listen()).
+Si algo falla, entra al .catch() y muestra el error en la consola.
+*/
+
+
+/*then() es una función que se usa con promesas en JavaScript.
+Promesa: Una operación que se ejecuta de forma asíncrona (ej: conectarse a MongoDB).
+then() se ejecuta cuando la promesa se resuelve con éxito.
+catch() se ejecuta cuando la promesa falla o lanza un error.
+*/
 
 connectDB().then(() => {
     console.log('Conexion a mongo exitosa'); 
