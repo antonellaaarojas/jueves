@@ -1,0 +1,34 @@
+#puerto
+PORT=3000
+
+#url conexion a mongodb
+MONGODB_URL=mongodb+srv://admin:admin@cluster1.uma4b4m.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1
+
+#secreto para jwt
+JWT=secreto123
+
+# Configuración para el envío de correos (nodemailer)
+EMAIL_USER=pruebaclinicaa@gmail.com
+EMAIL_PASSWORD=jomosbtlxwuvcqho
+
+
+#El archivo .env (environment = entorno) es un archivo de configuración clave en desarrollo de software que almacena variables sensibles y configuración específica del entorno donde se ejecuta tu aplicación.
+
+#Características principales
+
+#Seguridad:
+#Almacena información sensible fuera del código.
+#Nunca se sube al repositorio Git (está en .gitignore).
+
+#Multi-entorno:
+
+#Puedes tener distintos archivos:
+
+#.env.development (local)
+#.env.production (servidor real)
+#.env.test (para pruebas)
+
+#Sintaxis:
+
+#Cada línea es CLAVE=valor.
+#Sin comillas alrededor del valor (a menos que contengan espacios).
