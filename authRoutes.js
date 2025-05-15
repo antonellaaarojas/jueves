@@ -54,17 +54,6 @@ const {
  * Ruta: POST /api/auth/login
  * ---------------------------
  * Permite a los usuarios iniciar sesión con sus credenciales.
- * 
- * @middleware loginValidator - Valida que el email y contraseña sean válidos
- * @controller login - Verifica credenciales y genera token JWT
- * 
- * @request
- *   - email: Email del usuario
- *   - password: Contraseña del usuario
- * 
- * @response
- *   - token: Token JWT para autenticación
- *   - usuario: Datos del usuario autenticado
  */
 router.post('/login', loginValidator, login);
 
@@ -78,12 +67,6 @@ router.post('/login', loginValidator, login);
  * ------------------------------------
  * Inicia el proceso de recuperación de contraseña enviando
  * un correo electrónico con un token de restablecimiento.
- * 
- * @middleware emailValidator - Valida que el email tenga formato correcto
- * @controller forgotPassword - Procesa la solicitud y envía el email
- * 
- * @request
- *   - email: Email del usuario que olvidó la contraseña
  */
 router.post('/forgot-password', emailValidator, forgotPassword);
 
@@ -91,23 +74,13 @@ router.post('/forgot-password', emailValidator, forgotPassword);
  * Ruta: GET /api/auth/reset-password/:token
  * ----------------------------------------
  * Verifica si el token de restablecimiento es válido.
- * 
- * @param token - Token único para restablecer contraseña
- * @controller verifyResetToken - Valida el token y su vigencia
  */
 router.get('/reset-password/:token', verifyResetToken);
 
 /**
  * Ruta: POST /api/auth/reset-password/:token
  * -----------------------------------------
- * Permite al usuario establecer una nueva contraseña.
- * 
- * @param token - Token único para restablecer contraseña
- * @middleware passwordValidator - Valida requisitos de la nueva contraseña
- * @controller resetPassword - Actualiza la contraseña en la base de datos
- * 
- * @request
- *   - password: Nueva contraseña del usuario
+ * Permite al usuario establecer una nueva contraseña.o
  */
 router.post('/reset-password/:token', passwordValidator, resetPassword);
 
